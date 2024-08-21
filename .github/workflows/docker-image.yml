@@ -40,6 +40,6 @@ jobs:
         with:
           context: .
           push: true
-          tags: negzar/Final-Project:latest
+          tags: negzar/final-project:latest
 
 
