@@ -18,9 +18,9 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 14
+            node-version: 14
 
-      - name: Install Dependencies
+      - name: Set up Dependencies
         run: npm install
 
       - name: Set up QEMU
@@ -40,14 +40,17 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/negzar/final-project:latest
+          tags: negzar/final-project:latest
 
       - name: Deploy
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.PASSWORD }}
-          script: |
-            docker pull ${{ secrets.DOCKER_USERNAME }}/negzar/final-project:latest
-            docker run -d -p 8080:8080 --name final-project ${{ secrets.DOCKER_USERNAME }}/negzar/final-project:latest
+            host: ${{ secrets.HOST }}
+            username: ${{ secrets.USERNAME }}
+            password: ${{ secrets.PASSWORD }}
+            script: |
+              docker pull ${{ secrets.DOCKER_USERNAME }}/negzar/final-project:latest
+              docker run -d -p 8080 --name final-project ${{ secrets.DOCKER_USERNAME }}/negzar/final-project:latest
+
+
+              
