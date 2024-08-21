@@ -39,7 +39,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: .
-          push: true
+          push: truegit commit -m "Initial commit with Docker and GitHub Actions"
           tags: negzar/Final-Project:latest
 
 
