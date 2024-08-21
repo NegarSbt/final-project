@@ -52,3 +52,5 @@ jobs:
               docker pull ${{ secrets.DOCKER_USERNAME }}/negzar/final-project:latest
               docker run -d -p 8080 --name final-project ${{ secrets.DOCKER_USERNAME }}/negzar/final-project:latest
 
+
+              
