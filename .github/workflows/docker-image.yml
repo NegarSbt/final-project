@@ -46,7 +46,7 @@ jobs:
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SSH_HOST }}
-          sername: ${{ secrets.SSH_USERNAME}}
+          username: ${{ secrets.SSH_USERNAME}}
           password: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             if [ "$(docker ps -aq -f name=final-project)" ]; then
