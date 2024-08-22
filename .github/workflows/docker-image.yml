@@ -45,9 +45,9 @@ jobs:
       - name: Deploy
         uses: appleboy/ssh-action@master
         with:
-            host: ${{ secrets.SSH_HOST }}
-            username: ${{ secrets.SSH_USERNAME}}
-            password: ${{ secrets.SSH_PRIVATE_KEY }}
-            script: |
-             docker pull docker.arvancloud.ir/${{ secrets.DOCKERHUB_USERNAME }}/final-project:latest
-             docker run -d -p 8080:8080 --name final-project docker.arvancloud.ir/${{ secrets.DOCKERHUB_USERNAME }}/final-project:latest
+          host: ${{ secrets.SSH_HOST }}
+          sername: ${{ secrets.SSH_USERNAME}}
+          password: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+              docker pull negzar/final-project:latest
+              docker run -d -p 8080 --name final-project negzar/final-project:latest
