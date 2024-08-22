@@ -49,7 +49,5 @@ jobs:
             username: ${{ secrets.SSH_USERNAME}}
             password: ${{ secrets.SSH_PRIVATE_KEY }}
             script: |
-             docker stop final-project
-             docker rm final-project
              docker pull docker.arvancloud.ir/${{ secrets.DOCKERHUB_USERNAME }}/final-project:latest
              docker run -d -p 8080:8080 --name final-project docker.arvancloud.ir/${{ secrets.DOCKERHUB_USERNAME }}/final-project:latest
