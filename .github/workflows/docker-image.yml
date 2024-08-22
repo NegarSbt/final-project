@@ -1,5 +1,3 @@
-# .github/workflows/docker-image.yml
-
 name: Docker Image CI
 
 on:
@@ -42,15 +40,18 @@ jobs:
           push: true
           tags: negzar/final-project:latest
 
+      - name: Add SSH key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          known_hosts: ${{ secrets.HOST }}
+
       - name: Deploy
         uses: appleboy/ssh-action@master
         with:
-            host: ${{ secrets.HOST }}
-            username: ${{ secrets.USERNAME }}
-            password: ${{ secrets.PASSWORD }}
-            script: |
-              docker pull ${{ secrets.DOCKER_USERNAME }}/negzar/final-project:latest
-              docker run -d -p 8080 --name final-project ${{ secrets.DOCKER_USERNAME }}/negzar/final-project:latest
-
-
-              
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            docker pull ${{ secrets.DOCKER_USERNAME }}/negzar/final-project:latest
+            docker run -d -p 8080 --name final-project ${{ secrets.DOCKER_USERNAME }}/negzar/final-project:latest
