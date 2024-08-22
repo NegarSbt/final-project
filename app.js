@@ -8,7 +8,7 @@ app.get("/", (req, res) => {
         <html lang="en">
         <head>
             <meta charset="utf-8">
-            <title>Web Fundamental Final Project</title>
+            <title>Devops Final Project</title>
             <style>
                 body {
                     background-image: url("https://wallpapers.com/images/high/simple-background-nfe3kq9cr13oqs3l.webp");
@@ -34,12 +34,12 @@ app.get("/", (req, res) => {
                 <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br><br><br>
                 <h1 align="center">
                     <font face="sans-serif" color="#2980b9" size="7">
-                    Web Fundamental Final Project
+                    Devops Final Project
                     </font>
                 </h1>
                 <h3 align="center">
                     <font face="Lato" color="#000" size="5">
-                        Install Nginx in ubuntu and configure it to host custom webpage
+                        Creating Docker file, Docker Build and Deploying on Server
                     </font>
                 </h3>
                 <br />
