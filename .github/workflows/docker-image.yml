@@ -51,3 +51,4 @@ jobs:
           script: |
               docker pull docker.arvancloud.ir/${{ secrets.DOCKER_USERNAME }}/final-project:latest
               docker run -d -p 8080:8080 --name final-project docker.arvancloud.ir/${{ secrets.DOCKER_USERNAME }}/final-project:latest
+              
